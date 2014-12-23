@@ -155,9 +155,9 @@ function createClient(options) {
     return client;
   }
   options = options || {};
-  Object.key(settings).forEach(function (key) {
+  Object.keys(config).forEach(function (key) {
     if (options[key]) {
-      settings[key] = options[key];
+      config[key] = options[key];
     }
   });
   if ( ! config.apiKey) {
