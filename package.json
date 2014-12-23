@@ -11,5 +11,8 @@
     "instrumentalapp"
   ],
   "author": "Jack Boberg <hello@jackboberg.info> (http://jackboberg.info/)",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "tape": "~3.0.3"
+  }
 }
