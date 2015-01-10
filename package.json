@@ -13,6 +13,7 @@
   "author": "Jack Boberg <hello@jackboberg.info> (http://jackboberg.info/)",
   "license": "MIT",
   "devDependencies": {
+    "sinon": "~1.12.2",
     "tape": "~3.0.3"
   }
 }
