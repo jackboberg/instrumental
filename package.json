@@ -4,12 +4,18 @@
   "description": "A client for the Instrumental collector API",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "tape ./test/**/*.test.js"
   },
   "keywords": [
     "instrumental",
     "instrumentalapp"
   ],
   "author": "Jack Boberg <hello@jackboberg.info> (http://jackboberg.info/)",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "mitm": "~1.0.2",
+    "sinon": "~1.12.2",
+    "split": "~0.3.2",
+    "tape": "~3.0.3"
+  }
 }
