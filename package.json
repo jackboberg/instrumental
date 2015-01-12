@@ -1,5 +1,5 @@
 {
-  "name": "instrumental-collector",
+  "name": "instrumental",
   "version": "1.0.0",
   "description": "A client for the Instrumental collector API",
   "main": "index.js",
@@ -11,6 +11,10 @@
     "instrumentalapp"
   ],
   "author": "Jack Boberg <hello@jackboberg.info> (http://jackboberg.info/)",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jackboberg/instrumental.git"
+  },
   "license": "MIT",
   "devDependencies": {
     "mitm": "~1.0.2",
