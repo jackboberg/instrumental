@@ -9,7 +9,7 @@ var connected = false;
 var config    = {
   apiKey      : false,
   host        : 'collector.instrumentalapp.com',
-  port        : 80,
+  port        : 8000,
   bufferLimit : 0
 };
 
@@ -87,8 +87,7 @@ function buffer(args) {
   }
   stack.push(args.join(' '));
   if (stack.length >= config.bufferLimit) {
-    // 
-    return process.nextTick(flush.bind(null, fn));
+    return flush(fn);
   }
   fn && fn();
 }
