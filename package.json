@@ -4,6 +4,7 @@
   "description": "A client for the Instrumental collector API",
   "main": "index.js",
   "scripts": {
+    "pretest": "standard",
     "test": "tape ./test/**/*.test.js"
   },
   "keywords": [
