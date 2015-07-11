@@ -4,6 +4,7 @@
   "description": "A client for the Instrumental collector API",
   "main": "index.js",
   "scripts": {
+    "pretest": "standard",
     "test": "tape ./test/**/*.test.js"
   },
   "keywords": [
@@ -20,6 +21,7 @@
     "mitm": "~1.0.2",
     "sinon": "~1.12.2",
     "split": "~0.3.2",
+    "standard": "~4.5.2",
     "tape": "~3.0.3"
   }
 }

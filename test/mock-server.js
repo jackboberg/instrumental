@@ -1,52 +1,52 @@
-var os   = require('os');
-var util = require('util');
+var os = require('os')
+var util = require('util')
 
-var split = require('split');
-var mitm = require("mitm")();
+var split = require('split')
+var mitm = require('mitm')()
 
-var server = { data: [] };
+var server = { data: [] }
 
-const API_KEY = 'secret';
+const API_KEY = 'secret'
 
-function checkHandshake(socket) {
+function checkHandshake (socket) {
   if (server.data[0].indexOf('hello version') === 0) {
-    server.connection.write(util.format('ok%s', os.EOL));
+    server.connection.write(util.format('ok%s', os.EOL))
   } else {
-    server.connection.end();
+    server.connection.end()
   }
 }
 
-function checkAuth(socket) {
+function checkAuth (socket) {
   if (server.data[1] === util.format('authenticate %s', API_KEY)) {
-    server.connection.write(util.format('ok%s', os.EOL));
+    server.connection.write(util.format('ok%s', os.EOL))
   } else {
-    server.connection.end();
+    server.connection.end()
   }
 }
 
-function handleNewLine(line) {
-  server.data.push(line);
+function handleNewLine (line) {
+  server.data.push(line)
 
   switch (server.data.length) {
     case 1:
-      checkHandshake();
-      break;
+      checkHandshake()
+      break
     case 2:
-      checkAuth();
-      break;
+      checkAuth()
+      break
   }
 }
 
-mitm.on("connection", function (socket, options) {
-  server.connection = socket;
-  server.options    = options;
+mitm.on('connection', function (socket, options) {
+  server.connection = socket
+  server.options = options
 
   // reset data on connection
-  server.data.length = 0;
+  server.data.length = 0
 
   // send new lines to handler
-  var lineStream = socket.pipe(split());
-  lineStream.on('data', handleNewLine);
-});
+  var lineStream = socket.pipe(split())
+  lineStream.on('data', handleNewLine)
+})
 
-module.exports = server;
+module.exports = server
