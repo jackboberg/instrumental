@@ -1,6 +1,8 @@
 Instrumental
 ============
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/jackboberg/instrumental.svg)](https://greenkeeper.io/)
+
 A client for the Instrumental collector API
 
 ## Install
